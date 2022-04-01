@@ -1,5 +1,6 @@
 package view;
 import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ public class Consola {
 	 	
 	 System.out.println("Menu:");
 	 System.out.println("__________________________________");
-	 System.out.println("1-Crear_proyecto");
-	 System.out.println("2-");
+	 System.out.println("1");
+	 System.out.println("2-Crear_proyecto");
 	 System.out.println("Menu:");
 	 System.out.println("Menu:");
 	 System.out.println("Menu:");
@@ -39,17 +40,12 @@ public class Consola {
 	Integer opcion = Integer.parseInt("Ingrese_una_opcion ");
 	
 	if (opcion == 1) {
-	String nombre_usuario = input("Ingrese su nombre de usuario ");
-	String correo_usuario = input("Ingrese su correo ");
-	Boolean es_duenio = true;
-	ArrayList actividades = new ArrayList<String>(); 
 	
-	this.usuario = new Participante(nombre_usuario, correo_usuario, es_duenio, actividades);
-    System.out.println("Ingrese nombre del proyecto");
 	
 	
 	}
 	else if (opcion == 2){
+		opcion2();
 		
 	}
     else if (opcion == 3){
@@ -65,7 +61,19 @@ public class Consola {
 	}
 		
 	
-	
+	 private void opcion2() {
+		String nombre_usuario = input("Ingrese su nombre de usuario ");
+		String correo_usuario = input("Ingrese su correo ");
+		Boolean es_duenio = true;
+		ArrayList actividades = new ArrayList<String>(); 
+		ArrayList participantes = new ArrayList<Participante>();
+		
+		this.usuario = new Participante(nombre_usuario, correo_usuario, es_duenio, actividades);
+	    System.out.println("Ingrese nombre del proyecto");
+	    loader.crear_proyecto(participantes, actividades);
+	    	    
+		
+	}
 	
 	
 	static private String input(String mensaje)
