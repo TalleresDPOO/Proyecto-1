@@ -39,26 +39,10 @@ public class Proyecto {
 
 
 	/**
-	 * @param nombre the nombre to set
-	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-	/**
 	 * @return the descripcion
 	 */
 	public String getDescripcion() {
 		return descripcion;
-	}
-
-
-	/**
-	 * @param descripcion the descripcion to set
-	 */
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
 	}
 
 
@@ -85,28 +69,11 @@ public class Proyecto {
 		return fecha_de_finalizacion;
 	}
 
-
-	/**
-	 * @param fecha_de_finalizacion the fecha_de_finalizacion to set
-	 */
-	public void setFecha_de_finalizacion(String fecha_de_finalizacion) {
-		this.fecha_de_finalizacion = fecha_de_finalizacion;
-	}
-
-
 	/**
 	 * @return the participantes
 	 */
 	public ArrayList<Participante> getParticipantes() {
 		return participantes;
-	}
-
-
-	/**
-	 * @param participantes the participantes to set
-	 */
-	public void setParticipantes(ArrayList<Participante> participantes) {
-		this.participantes = participantes;
 	}
 
 
@@ -119,14 +86,6 @@ public class Proyecto {
 
 
 	/**
-	 * @param tipos_de_actividades the tipos_de_actividades to set
-	 */
-	public void setTipos_de_actividades(ArrayList<String> tipos_de_actividades) {
-		this.tipos_de_actividades = tipos_de_actividades;
-	}
-
-
-	/**
 	 * @return the actividades
 	 */
 	public HashMap<String, ArrayList<Actividad>> getActividades() {
@@ -134,17 +93,12 @@ public class Proyecto {
 	}
 
 
-	/**
-	 * @param actividades the actividades to set
-	 */
-	public void setActividades(HashMap<String, ArrayList<Actividad>> actividades) {
-		this.actividades = actividades;
-	}
+
 	
-	
-	private void aniadir_participante(String nombre, String correo, Boolean es_duenio) {
+	public void aniadir_participante(String nombre, String correo, Boolean es_duenio) {
 	    ArrayList<Actividad> lista_actividades = new ArrayList<Actividad>();
-		Participante participante = new Participante(nombre,correo, es_duenio,lista_actividades);
+	    Reporte_de_actividades reporte = new Reporte_de_actividades();
+		Participante participante = new Participante(nombre,correo, es_duenio,lista_actividades, reporte);
 		
 		this.participantes.add(participante);
 	}

@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import modelo.Participante;
+import modelo.Reporte_de_actividades;
 
 
 public class Run {
@@ -16,7 +17,8 @@ public class Run {
 		String correo_usuario = input("Ingrese su correo ");
 		Boolean es_duenio = true;
 		ArrayList actividades = new ArrayList<String>();
-	    Participante usuario = new Participante(nombre_usuario, correo_usuario, es_duenio, actividades);
+		Reporte_de_actividades reporte = new Reporte_de_actividades();
+	    Participante usuario = new Participante(nombre_usuario, correo_usuario, es_duenio, actividades, reporte);
     	Consola consola = new Consola(usuario);
     	consola.ejecutar_aplicacion();
     	consola.mostrar_menu();

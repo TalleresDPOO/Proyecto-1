@@ -6,14 +6,16 @@ public class Participante {
 	private String correo;
 	private Boolean es_duenio;
 	private ArrayList<Actividad> lista_actividades;
+	private Reporte_de_actividades reporte_de_actividades;
 	
 	public Participante(String nombre, String correo,
-			Boolean es_duenio, ArrayList<Actividad> lista_actividades) {
+			Boolean es_duenio, ArrayList<Actividad> lista_actividades, Reporte_de_actividades reporte_de_actividades) {
 		
 		this.nombre = nombre;
 		this.correo = correo;
 		this.es_duenio = es_duenio;
 		this.lista_actividades = lista_actividades;
+		this.reporte_de_actividades = reporte_de_actividades;
 		
 	}
 
@@ -52,12 +54,6 @@ public class Participante {
 		return es_duenio;
 	}
 
-	/**
-	 * @param es_duenio the es_duenio to set
-	 */
-	public void setEs_duenio(Boolean es_duenio) {
-		this.es_duenio = es_duenio;
-	}
 
 	/**
 	 * @return the lista_actividades
@@ -65,19 +61,14 @@ public class Participante {
 	public ArrayList<Actividad> getLista_actividades() {
 		return lista_actividades;
 	}
-
+	
 	/**
-	 * @param lista_actividades the lista_actividades to set
+	 * @return the Reporte_de_actividades
 	 */
-	public void setLista_actividades(ArrayList<Actividad> lista_actividades) {
-		this.lista_actividades = lista_actividades;
+	public ArrayList<Actividad> getReporte_de_actividades() {
+		return lista_actividades;
 	}
-	
-	
-	private void registrar_actividad() {
-		
-		
-	}
+
  	
 	
 	public void registrar_actividad(Actividad actividad) {
@@ -88,21 +79,6 @@ public class Participante {
 				
 	}
  
-	private ArrayList<Reporte_de_actividades> reporte_actividades() {
-		ArrayList<Reporte_de_actividades> lista_reportes = new ArrayList<Reporte_de_actividades>();
-		for (int i=0;i<lista_actividades.size();i++) {
-			Actividad actividad = lista_actividades.get(i);
-			ArrayList registros = actividad.getRegistro_de_actividades();
-			for (int j=0;i<registros.size();j++) {
-				Registro_de_actividades registro = (Registro_de_actividades) registros.get(j);
-						Reporte_de_actividades reporte = registro.getReporte_de_actividades();
-						lista_reportes.add(reporte);
-	    }
-    
-	
-		}
-		return lista_reportes;
-	}
 	
 }
 	

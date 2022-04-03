@@ -18,6 +18,7 @@ import modelo.Actividad;
 public class Consola {
 
 	private Participante usuario;
+	private Loader loader = new Loader();
 	
 	static public void main(String[] args){
 		
@@ -45,12 +46,14 @@ public class Consola {
 	 System.out.println("4-Registrar actividad con fecha y hora modificada");
 	 System.out.println("5-Cronometrar una actividad");
 	 System.out.println("6-Mostrar reporte de actividades");
+	 System.out.println("7-Salir");
 	 	
 		  
 		
 	}
 	public void ejecutar_opciones(){
-		
+	Boolean continuar = true;
+	while (continuar == true);	
 	String opcion_string = input("Ingrese_una_opcion ");
 	Integer opcion = Integer.parseInt(opcion_string);
 	
@@ -68,6 +71,12 @@ public class Consola {
 		
 	}  
     else if (opcion == 5){
+		
+	}
+    else if (opcion == 6){
+		
+	}
+    else if (opcion == 7){
 		
 	}
 	
@@ -94,7 +103,6 @@ public class Consola {
 		String fecha_inicio = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
 		String fecha_estimada_de_finalizacion = input("Ingrese una fecha estimada de finalizacion si la conoce en formato yyyy/MM/dd ");
 		
-        Loader loader = new Loader(); 
 	    loader.crear_proyecto(nombre_proyecto, descripcion, fecha_inicio , fecha_estimada_de_finalizacion, participantes,
 	    		tipos_de_actividades, actividades);
 	    	    
@@ -103,11 +111,32 @@ public class Consola {
 
 
 	 private void opcion2() {
+		 
 		String nombre_proyecto = input("Ingrese el nombre de el proyecto al que quiere añadir un participante");
-		String nombre_participante = 
+		String nombre_participante = input("Ingrese el nombre del participante");
+		String correo_participante = input("Ingrese el correo del participante");
+		loader.aniadir_participante(nombre_proyecto, nombre_participante, correo_participante);
+		
+		
 				
 		
 	}
+	 
+	private void opcion3() {
+		
+	}
+    private void opcion4() {
+		
+	}
+    private void opcion5() {
+	
+    }
+    private void opcion6() {
+	
+    }
+    private void opcion7() {
+    
+    } 
 	
 
 	 

@@ -42,14 +42,6 @@ public class Actividad {
 	public Registro_de_actividades getUltimo_registro() {
 		return ultimo_registro;
 	}
-
-	/**
-	 * @param ultimo_registro the ultimo_registro to set
-	 */
-	public void setUltimo_registro(Registro_de_actividades ultimo_registro) {
-		this.ultimo_registro = ultimo_registro;
-	}
-
 	
 	/**
 	 * @return the titulo
@@ -57,14 +49,6 @@ public class Actividad {
 	public String getTitulo() {
 		return titulo;
 	}
-
-	/**
-	 * @param titulo the titulo to set
-	 */
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
 	
 	/**
 	 * @return the registro_de_actividades
@@ -74,23 +58,10 @@ public class Actividad {
 	}
 
 	/**
-	 * @param registro_de_actividades the registro_de_actividades to set
-	 */
-	public void setRegistro_de_actividades(ArrayList<Registro_de_actividades> registro_de_actividades) {
-		this.registro_de_actividades = registro_de_actividades;
-	}
-
-	/**
 	 * @return the tipo
 	 */
 	public String getTipo() {
 		return tipo;
 	}
 
-	/**
-	 * @param tipo the tipo to set
-	 */
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-}
+
