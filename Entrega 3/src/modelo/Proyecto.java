@@ -143,6 +143,11 @@ public class Proyecto {
 	
 	
 	private void aniadir_participante(String nombre, String correo, Boolean es_duenio) {
+	    ArrayList<Actividad> lista_actividades = new ArrayList<Actividad>();
+		Participante participante = new Participante(nombre,correo, es_duenio,lista_actividades);
 		
+		this.participantes.add(participante);
 	}
 }
+	    
+

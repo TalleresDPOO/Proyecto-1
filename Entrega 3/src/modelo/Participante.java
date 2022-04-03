@@ -78,9 +78,32 @@ public class Participante {
 		
 		
 	}
- 
-	private String reporte_actividades() {
+ 	
+	
+	public void registrar_actividad(Actividad actividad) {
 		
-		return "xd";
+		this.lista_actividades.add(actividad);
+		
+	
+				
 	}
+ 
+	private ArrayList<Reporte_de_actividades> reporte_actividades() {
+		ArrayList<Reporte_de_actividades> lista_reportes = new ArrayList<Reporte_de_actividades>();
+		for (int i=0;i<lista_actividades.size();i++) {
+			Actividad actividad = lista_actividades.get(i);
+			ArrayList registros = actividad.getRegistro_de_actividades();
+			for (int j=0;i<registros.size();j++) {
+				Registro_de_actividades registro = (Registro_de_actividades) registros.get(j);
+						Reporte_de_actividades reporte = registro.getReporte_de_actividades();
+						lista_reportes.add(reporte);
+	    }
+    
+	
+		}
+		return lista_reportes;
+	}
+	
 }
+	
+
